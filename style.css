@@ -317,3 +317,59 @@ footer p {
     max-width: 350px; /* Mas não passará de 350px de largura em telas grandes */
     margin-bottom: 20px; /* Um espaço entre a logo e o texto abaixo */
 }
+
+/* =============================================== */
+/* --- RESPONSIVIDADE PARA CELULARES E TABLETS --- */
+/* =============================================== */
+
+/* Regras para telas de 768px de largura ou menos (tablets em modo retrato e celulares em geral) */
+@media (max-width: 768px) {
+
+    /* Ajusta os containers principais para não colarem nas bordas */
+    #quiz-container, 
+    #resultado-container {
+        width: 90%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Transforma a galeria de 3 colunas em uma única coluna vertical */
+    #galeria-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Aumenta a altura das imagens na galeria para ficarem mais bonitas na vertical */
+    .galeria-img {
+        height: 180px;
+    }
+}
+
+/* Regras AINDA MAIS específicas para telas estreitas de 480px ou menos (maioria dos celulares, como o seu A03s) */
+@media (max-width: 480px) {
+
+    /* Ajusta a logo no topo para não parecer tão grande */
+    #logo-header {
+        height: 35px;
+    }
+
+    /* Diminui ainda mais os títulos para evitar quebras de linha estranhas */
+    #pergunta-texto {
+        font-size: 1.2em;
+    }
+
+    #roteiro-titulo {
+        font-size: 1.6em;
+    }
+
+    /* Ajusta os botões de opção para que textos mais longos não quebrem em duas linhas */
+    .opcao {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+    
+    /* Deixa as imagens da galeria um pouco menores em telas bem pequenas */
+    .galeria-img {
+        height: 160px;
+    }
+}
