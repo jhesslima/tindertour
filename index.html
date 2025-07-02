@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tindertour - Seu Roteiro Perfeito</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Logo da Tindertour" id="logo-header">
+    </header>
+
+    <div id="boas-vindas-container">
+        <video id="video-boas-vindas" class="video-fundo" autoplay muted loop>
+            <source src="videos/fundo-es-inicial" type="video/mp4">
+        </video>
+        <div class="boas-vindas-overlay">
+            <h1>Descubra seu roteiro ideal no Espírito Santo</h1>
+        </div>
+    </div>
+
+    <div id="fundo-container">
+        <video id="video-principal" class="video-fundo" autoplay muted loop><source src="videos/video_principal.mp4" type="video/mp4"></video>
+        <video id="video-aventura" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_aventura.mp4" type="video/mp4"></video>
+        <video id="video-relax" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_relax.mp4" type="video/mp4"></video>
+        <video id="video-cultura" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_cultura.mp4" type="video/mp4"></video>
+        <video id="video-gastronomia" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_gastronomia.mp4" type="video/mp4"></video>
+        <video id="video-festa" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_festa.mp4" type="video/mp4"></video>
+        <video id="video-romance" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_romance.mp4" type="video/mp4"></video>
+        <video id="video-economico" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_economico.mp4" type="video/mp4"></video>
+        <video id="video-luxo" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_luxo.mp4" type="video/mp4"></video>
+        <video id="video-familia" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_familia.mp4" type="video/mp4"></video>
+        <video id="video-ecoturismo" class="video-fundo" muted loop style="display: none;"><source src="videos/resultado_ecoturismo.mp4" type="video/mp4"></video>
+    </div>
+    <div id="fundo-overlay"></div>
+
+    <div id="tela-carregamento">
+        <img src="logo.png" alt="Logo Tindertour" id="logo-carregamento">
+        <p>Encontrando seu próximo destino...</p>
+    </div>
+
+    <div id="conteudo-principal" style="display: none;">
+        <div id="quiz-container">
+            <h2 id="pergunta-texto">Aqui vai a pergunta?</h2>
+            <div id="opcoes-container"></div>
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="progresso-texto">Pergunta 1 de 7</p>
+        </div>
+    </div>
+
+    <div id="tela-resultado" style="display: none;">
+        <div id="resultado-container">
+            <h2>Seu roteiro ideal é:</h2>
+            <h3 id="roteiro-titulo">Título do Roteiro</h3>
+            <p id="roteiro-descricao">Descrição detalhada do roteiro aparecerá aqui.</p>
+            <div id="roteiro-extras">
+                <div id="icones-container"></div>
+                <div id="galeria-container"></div>
+            </div>
+            <button id="botao-reiniciar">Começar de Novo</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tindertour. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

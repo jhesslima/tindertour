@@ -1,0 +1,319 @@
+/* Importando uma fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* --- ESTILOS DE FUNDO DINÂMICO --- */
+
+#fundo-container {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Fica atrás de todo o conteúdo */
+    background-size: cover; /* Cobre todo o espaço */
+    background-position: center center; /* Centraliza a imagem */
+    transition: background-image 0.5s ease-in-out; /* Efeito de fade para a imagem */
+}
+
+.video-fundo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre o espaço sem distorcer o vídeo */
+}
+
+#fundo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25); /* Efeito de FADE: preto com 50% de transparência */
+    z-index: -1; /* Fica na frente do fundo, mas atrás do conteúdo */
+}
+
+/* --- ESTILOS GERAIS --- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: #121212; /* Cor de fundo caso o vídeo não carregue */
+    margin: 0;
+    padding-top: 80px; /* Espaço para o header fixo */
+    padding-bottom: 60px; /* Espaço para o rodapé fixo */
+}
+
+h1, h2, h3 {
+    color: #ffffff; /* Cor branca para os títulos também */
+}
+
+/* Estilo da Tela de Carregamento */
+/* --- TELA DE CARREGAMENTO --- */
+#tela-carregamento {
+    position: fixed; /* Fixa na tela inteira, ignorando a rolagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* 100% da altura da janela do navegador */
+    background-color: #121212; /* Fundo escuro e OPACA para esconder o conteúdo atrás */
+    z-index: 100; /* Um valor bem alto para garantir que fique na FRENTE de tudo */
+    
+    /* As regras de flexbox que antes estavam no body, agora estão aqui para centralizar o H1 e o P */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tela-carregamento h1 {
+    font-size: 3em;
+    color: #e44d26;
+}
+
+header {
+    position: fixed; /* Posição fixa, mesmo com a rolagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Mesmo estilo "vidro fosco" dos outros containers */
+    background-color: rgba(80, 80, 80, 0.4); 
+    backdrop-filter: blur(10px);
+    
+    padding: 15px 0; /* Espaçamento interno vertical */
+    z-index: 10; /* Garante que fique acima de quase tudo */
+
+    /* Centraliza a logo dentro da barra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Uma sombra sutil para dar profundidade */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#logo-header {
+    height: 40px; /* Altura da logo. Ajuste conforme necessário */
+    width: auto; /* A largura se ajusta automaticamente para manter a proporção */
+}
+
+/* Container Principal do Quiz e Resultado */
+#quiz-container, #resultado-container {
+    background-color: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco no fundo do container */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-active {
+    animation: fadeIn 0.6s ease-out;
+}
+
+#pergunta-texto {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+/* Estilo dos Botões de Opção */
+#opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opcao, #botao-reiniciar {
+    background-color: #e44d26;
+    color: white;
+    border: 2px solid transparent;
+    padding: 15px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.opcao:hover {
+    background-color: #c33b1f;
+    border-color: #ffffff;
+}
+
+#progresso-texto {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+#progress-bar-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    height: 10px;
+    margin-top: 30px;
+    overflow: hidden; /* Garante que a barra interna não ultrapasse as bordas arredondadas */
+}
+
+#progress-bar {
+    width: 0%; /* Começa com 0% de largura */
+    height: 100%;
+    background-color: #e44d26; /* Mesma cor dos botões */
+    border-radius: 10px;
+    transition: width 0.5s ease-out; /* Animação suave quando a largura mudar */
+}
+
+/* Estilo da Tela de Resultado */
+#roteiro-titulo {
+    color: #e44d26;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#roteiro-descricao {
+    margin-bottom: 25px;
+}
+
+#roteiro-extras {
+    margin-bottom: 25px;
+}
+
+#icones-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icone-destaque {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 50%; /* Deixa o fundo do ícone redondo */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icone-destaque img {
+    width: 100%;
+    height: 100%;
+    filter: invert(1); /* Inverte a cor do ícone para branco, útil para SVGs pretos */
+}
+
+#galeria-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas de tamanho igual */
+    gap: 10px;
+    width: 100%;
+}
+
+.galeria-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px;
+    border: 2px solid #e44d26;
+    opacity: 0; /* Começa invisível para animar a entrada */
+    animation: fadeIn 0.5s ease-out forwards; /* Usa a mesma animação de fade-in */
+}
+
+/* NOVO: Animação com delay para as imagens da galeria */
+.galeria-img:nth-child(1) { animation-delay: 0.2s; }
+.galeria-img:nth-child(2) { animation-delay: 0.4s; }
+.galeria-img:nth-child(3) { animation-delay: 0.6s; }
+
+#botao-reiniciar {
+    margin-top: 20px;
+    background-color: #4CAF50;
+}
+
+#botao-reiniciar:hover {
+    background-color: #45a049;
+}
+
+footer {
+    position: fixed; /* Deixa o rodapé fixo na tela */
+    bottom: 0;       /* Alinha na parte de baixo */
+    left: 0;         /* Alinha na parte da esquerda */
+    width: 100%;     /* Faz ocupar a largura toda */
+    background-color: #121212; /* Um fundo escuro sólido */
+    padding: 10px 0; /* Espaçamento interno (10px em cima/baixo, 0 nas laterais) */
+    z-index: 10;     /* Garante que o rodapé fique acima do overlay do fundo */
+}
+
+footer p {
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    font-size: 0.8em; /* Texto um pouco menor */
+    color: #aaa; /* Uma cor cinza clara, para ser sutil */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* --- SEÇÃO DE BOAS-VINDAS --- */
+#boas-vindas-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 200px;
+    margin: 0 auto 30px auto; /* Centraliza e adiciona margem inferior */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#video-boas-vindas { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto; 
+    height: auto; 
+    transform: translate(-50%, -50%); 
+    z-index: -2; 
+    object-fit: cover; 
+}
+
+.boas-vindas-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(80, 80, 80, 0.5); 
+    backdrop-filter: blur(10px); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: #fff; 
+    text-align: center; 
+}
+
+.boas-vindas-overlay h1 { 
+    font-size: 2em; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    padding: 0 20px; 
+}
+
+/* =================================================== */
+/* --- ESTILO DA LOGO NA TELA DE CARREGAMENTO --- */
+/* =================================================== */
+
+#logo-carregamento {
+    width: 70%; /* A logo ocupará 70% da largura do container */
+    max-width: 350px; /* Mas não passará de 350px de largura em telas grandes */
+    margin-bottom: 20px; /* Um espaço entre a logo e o texto abaixo */
+}
