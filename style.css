@@ -373,3 +373,16 @@ footer p {
         height: 160px;
     }
 }
+
+.link-proposta {
+    margin-top: 20px; /* Cria um espaço acima do texto */
+    color: #e44d26;    /* Cor laranja para combinar com a identidade visual */
+    font-weight: bold;
+    cursor: pointer;   /* Transforma o mouse em uma "mãozinha" */
+    text-decoration: underline; /* Adiciona um sublinhado */
+    transition: color 0.3s ease;
+}
+
+.link-proposta:hover {
+    color: #ffffff; /* Muda para branco ao passar o mouse por cima */
+}
