@@ -357,13 +357,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function mostrarResultado() {
         document.getElementById('boas-vindas-container').style.display = 'none';
-        let tipoVencedor = '';
-        let maxScore = -1;
-        for (let tipo in scores) { if (scores[tipo] > maxScore) { maxScore = scores[tipo]; tipoVencedor = tipo; } }
+        const ranking = Object.entries(scores)
+            .sort((a, b) => b[1] - a[1]);
+        const tipoVencedor = ranking[0][0];
+        const segundoLugar = ranking[1][0];
+        const terceiroLugar = ranking[2][0];
         
         const roteiroFinal = roteiros[tipoVencedor];
         if (roteiroTitulo) roteiroTitulo.innerText = roteiroFinal.titulo;
         if (roteiroDescricao) roteiroDescricao.innerHTML = roteiroFinal.descricao;
+
+        let rankingHtml = `<div style="margin-top:20px; font-size:1em; color:#e44d26;">
+            <strong>2º lugar:</strong> ${roteiros[segundoLugar].titulo}<br>
+            <strong>3º lugar:</strong> ${roteiros[terceiroLugar].titulo}
+        </div>`;
+
+        if (roteiroDescricao) roteiroDescricao.innerHTML += rankingHtml;
 
         // Limpa e preenche os ícones e a galeria
         if (iconesContainer) {
