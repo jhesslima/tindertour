@@ -386,3 +386,18 @@ footer p {
 .link-proposta:hover {
     color: #ffffff; /* Muda para branco ao passar o mouse por cima */
 }
+
+/* Estilo para os subtítulos dentro da descrição do roteiro */
+#roteiro-descricao h4 {
+    margin-top: 25px; /* Espaço acima de cada subtítulo */
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(228, 77, 38, 0.5); /* Linha sutil abaixo do subtítulo */
+    font-size: 1.1em;
+    color: #e44d26; /* Cor laranja para combinar com a identidade */
+}
+
+/* Garante que o primeiro subtítulo não tenha tanto espaço no topo */
+#roteiro-descricao h4:first-child {
+    margin-top: 15px;
+}
