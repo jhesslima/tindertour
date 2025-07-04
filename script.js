@@ -261,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let perguntaAtualIndex = 0;
     let scores = { aventura: 0, relax: 0, cultura: 0, gastronomia: 0, festa: 0, romance: 0, economico: 0, luxo: 0, familia: 0, ecoturismo: 0 };
+    let historicoRespostas = [];
 
     function resetarFundos() {
         if (fundoContainer) fundoContainer.style.backgroundImage = 'none';
@@ -271,6 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function iniciarQuiz() {
         perguntaAtualIndex = 0;
         for (let tipo in scores) { scores[tipo] = 0; }
+
+        historicoRespostas = [];
         
         resetarFundos();
         if (videoPrincipal) {
@@ -303,6 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (perguntaTexto) perguntaTexto.innerText = perguntaAtual.pergunta;
+        
         if (opcoesContainer) {
             opcoesContainer.innerHTML = '';
             perguntaAtual.opcoes.forEach(opcao => {
@@ -313,6 +317,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.addEventListener('click', selecionarOpcao);
                 opcoesContainer.appendChild(button);
             });
+
+            if (perguntaAtualIndex > 0) {
+                const botaoVoltar = document.createElement('button');
+                botaoVoltar.innerText = 'Voltar';
+                botaoVoltar.className = 'botao-voltar';
+                botaoVoltar.addEventListener('click', voltarPergunta);
+                opcoesContainer.appendChild(botaoVoltar);
+            }
         }
         
         if (progressoTexto) progressoTexto.innerText = `Pergunta ${perguntaAtualIndex + 1} de ${perguntas.length}`;
@@ -320,6 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function selecionarOpcao(event) {
         const valorSelecionado = event.target.dataset.valor;
+        historicoRespostas.push(valorSelecionado);
         if (scores.hasOwnProperty(valorSelecionado)) { scores[valorSelecionado]++; }
         perguntaAtualIndex++;
 
@@ -328,6 +341,17 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             if (progressBar) progressBar.style.width = `100%`;
             setTimeout(mostrarResultado, 600);
+        }
+    }
+
+    function voltarPergunta() {
+        if (perguntaAtualIndex > 0) {
+            perguntaAtualIndex--;
+            const respostaAnterior = historicoRespostas.pop();
+            if (scores.hasOwnProperty(respostaAnterior)) {
+                scores[respostaAnterior]--;
+            }
+            mostrarPergunta();
         }
     }
 
