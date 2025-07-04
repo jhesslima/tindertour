@@ -23,7 +23,7 @@ const roteiros = {
                 <p>Armazém do Caparaó (Caparaó), Restaurante do Zezinho (Alfredo Chaves) e Carebão (Linhares).</p>`,
         videoFundo: "video-aventura",
         tags: ["mountain"], // Tags para os ícones
-        imagens: ["aventura1.jpg", "aventura2.jpg", "aventura3.jpg"] // Imagens da galeria
+        imagens: ["aventura1.webp", "aventura2.jpg", "aventura3.webp"] // Imagens da galeria
     },
     relax: {
         titulo: "Sol & Praia: o seu paraíso capixaba!",
@@ -69,7 +69,7 @@ const roteiros = {
                 <p>Casa de Bamba ou Caranguejo do Assis (Vitória ou Vila Velha), Restaurante Tia Lúcia (Santa Maria de Jetibá) e Restaurante Cantina da Mama (Anchieta).</p>`,
         videoFundo: "video-cultura",
         tags: ["culture"],
-        imagens: ["cultura1.jpg", "cultura2.jpg", "cultura3.jpg"]
+        imagens: ["cultura1.jpg", "cultura2.jpeg", "cultura3.jpeg"]
     },
     gastronomia: {
         titulo: "Sabores do ES: uma experiência inesquecível",
@@ -115,7 +115,7 @@ const roteiros = {
                 <p>Barlavento (Guarapari), Buraco do Tatu (Itaúnas) e La Rustic (São Mateus).</p>`,
         videoFundo: "video-festa",
         tags: ["party"],
-        imagens: ["festa1.jpg", "festa2.jpg", "festa3.jpeg"]
+        imagens: ["festa1.png", "festa2.webp", "festa3.jpg"]
     },
     romance: {
         titulo: "O amor está no ar no Espírito Santo",
@@ -138,7 +138,7 @@ const roteiros = {
                 <p>Restaurante Sombra da Serra (Domingos Martins), Fabrinka (Santa Teresa) e Giga Byte (Colatina).</p>`,
         videoFundo: "video-romance",
         tags: ["love"],
-        imagens: ["romance1.jpg", "romance2.png", "romance3.webp"]
+        imagens: ["romance1.jpg", "romance2.jpg", "romance3.jpg"]
     },
     economico: {
         titulo: "O melhor do ES sem pesar no bolso",
@@ -161,7 +161,7 @@ const roteiros = {
                 <p>Ancoradouro (Piúma), Restaurante Gaivota's (Marataízes) e Restaurante da Zezé (Aracruz).</p>`,
         videoFundo: "video-economico",
         tags: ["economic"],
-        imagens: ["economia1.jpg", "economia2.jpg", "economia3.jpg"]
+        imagens: ["economia1.png", "economia2.jpg", "economia3.webp"]
     },
     luxo: {
         titulo: "Sofisticação e exclusividade no melhor destino",
@@ -184,7 +184,7 @@ const roteiros = {
                 <p>Dom Due (Pedra Azul), Soeta (Vitória) e Muv Gastrobar (Guarapari).</p>`,
         videoFundo: "video-luxo",
         tags: ["luxury"],
-        imagens: ["luxo1.jpeg", "luxo2.jpg", "luxo3.webp"]
+        imagens: ["luxo1.jpg", "luxo2.jpg", "luxo3.jpg"]
     },
     familia: {
         titulo: "Diversão em Família é aqui no ES",
@@ -207,7 +207,7 @@ const roteiros = {
                 <p>Hiléia Restaurante (Linhares), Cervejaria Altezza (Venda Nova do Imigrante) e Ilha do Caranguejo (Vila Velha).</p>`,
         videoFundo: "video-familia",
         tags: ["family"],
-        imagens: ["familia1.webp", "familia2.png", "familia3.jpg"]
+        imagens: ["familia1.jpg", "familia2.jpg", "familia3.jpg"]
     },
     ecoturismo: {
         titulo: "Conexão profunda com a biodiversidade capixaba",
@@ -230,7 +230,7 @@ const roteiros = {
                 <p>Restaurante Cravo e Canela (Linhares), Toca do Lagarto (Santa Teresa) e Restaurante e Quiosque do Alemão (Guarapari).</p>`,
         videoFundo: "video-ecoturismo",
         tags: ["nature"],
-        imagens: ["ecoturismo1.jpg", "ecoturismo2.jpg", "ecoturismo3.jpg"]
+        imagens: ["ecoturismo1.jpeg", "ecoturismo2.webp", "ecoturismo3.jpg"]
     }
 };
 
