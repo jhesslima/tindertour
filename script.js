@@ -428,7 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    if (qrClose && qrPopup) {
+    if (qrClose && qrcodePopup) {
         qrClose.addEventListener('click', () => {
             qrcodePopup.style.display = 'none';
         });
