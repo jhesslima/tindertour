@@ -258,6 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconesContainer = document.getElementById('icones-container');
     const galeriaContainer = document.getElementById('galeria-container');
     const boasVindasContainer = document.getElementById('boas-vindas-container');
+    const qrClose = document.getElementById('qrcode-close');
+    const qrcodePopup = document.getElementById('qrcode-popup');
 
     let perguntaAtualIndex = 0;
     let scores = { aventura: 0, relax: 0, cultura: 0, gastronomia: 0, festa: 0, romance: 0, economico: 0, luxo: 0, familia: 0, ecoturismo: 0 };
@@ -422,6 +424,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             telaCarregamento.style.display = 'none';
             iniciarQuiz();
+            if (qrcodePopup) qrcodePopup.style.display = 'flex';
         }, 2000);
     }
+
+    if (qrClose && qrPopup) {
+        qrClose.addEventListener('click', () => {
+            qrcodePopup.style.display = 'none';
+        });
+    }
+
 });
